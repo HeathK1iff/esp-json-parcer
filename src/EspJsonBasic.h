@@ -18,6 +18,9 @@ public:
 	EspJsonBasic* getParent();
 	void setParent(EspJsonBasic* parent);
 
+	bool isClass(const char* name);
+	virtual const char* className();
+
 	virtual ~EspJsonBasic();
 };
 

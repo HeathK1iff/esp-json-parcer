@@ -44,3 +44,7 @@ bool EspJsonPair::isKey(const char* key) {
 EspJsonBasic* EspJsonPair::getValue() {
 	return _val;
 }
+
+const char* EspJsonPair::className() {
+	return "EspJsonPair";
+}

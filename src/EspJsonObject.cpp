@@ -85,11 +85,11 @@ EspJsonPair* JsonObject::createPair(EspJsonValue* key) {
 
 EspJsonValue* JsonObject::getValuePtr(const char* key)
 {
-	char bufKey[20];
-	char* pKey = _nextKey(key, bufKey);
+	char nextKey[20];
+	char* pKey = _nextKey(key, nextKey);
 
 	char bufKeyArr[20];
-	int index = _parceArrayKey(bufKey, bufKeyArr);
+	int index = _parceArrayKey(nextKey, bufKeyArr);
 
 	EspJsonPair* item = _root;
 	EspJsonBasic* found = nullptr;
@@ -112,4 +112,8 @@ EspJsonValue* JsonObject::getValuePtr(const char* key)
 
 
 	return (EspJsonValue*)found;
+}
+
+const char* JsonObject::className() {
+	return "JsonObject";
 }

@@ -38,3 +38,11 @@ EspJsonBasic* EspJsonArray::getItem(int index) {
 	}
 	return nullptr;
 }
+
+int EspJsonArray::getCount() {
+	return _count;
+}
+
+const char* EspJsonArray::className() {
+	return "EspJsonArray";
+}

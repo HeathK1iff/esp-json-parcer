@@ -11,6 +11,7 @@ public:
 	EspJsonValue(char* valPtr, int size);
 	char* getValuePtr();
 	int getSize();
+	virtual const char* className();
 };
 
 #endif;

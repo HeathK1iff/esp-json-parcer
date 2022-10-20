@@ -17,6 +17,7 @@ public:
 	~JsonObject();
 	EspJsonPair* createPair(EspJsonValue* key);
 	EspJsonValue* getValuePtr(const char* key);
+	virtual const char* className();
 };
 
 #endif // ! JSON_OBJECT_H

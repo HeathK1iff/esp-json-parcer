@@ -10,7 +10,7 @@
 
 void EspJsonParcer::Value(Token prevToken) {
 	Token token = _scanner->nextToken();
-
+	
 	switch (token.type) {
 	case ttColon:
 		Colon(token);
@@ -158,7 +158,7 @@ void EspJsonParcer::SquareBracketEnd(Token prevToken) {
 
 void EspJsonParcer::Comma(Token prevToken) {
 	_currentPair = nullptr;
-
+	
 	Token token = _scanner->nextToken();
 
 	switch (token.type) {
@@ -269,4 +269,14 @@ double EspJsonParcer::getFloatValue(const char* key) {
 	}
 
 	return 0;
+}
+
+int EspJsonParcer::getArraySize(const char* key) {
+	EspJsonBasic* value = _root->getValuePtr(key);
+
+	if ((value != nullptr) && (value->isClass("EspJsonArray"))) {
+		return ((EspJsonArray*)value)->getCount();
+	}
+
+	return -1;
 }

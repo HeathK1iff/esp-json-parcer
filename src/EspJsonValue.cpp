@@ -12,3 +12,7 @@ char* EspJsonValue::getValuePtr() {
 int EspJsonValue::getSize() {
 	return _size;
 }
+
+const char* EspJsonValue::className() {
+	return "EspJsonValue";
+}

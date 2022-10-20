@@ -28,6 +28,8 @@ public:
 	bool getValue(const char* key, char* dest);
 	int getIntValue(const char* key);
 	double getFloatValue(const char* key);
+	int getArraySize(const char* key);
+
 };
 
 #endif // !ESP_JSON_PARCER_H

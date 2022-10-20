@@ -14,6 +14,7 @@ public:
 	void assignVal(EspJsonBasic* val);
 	bool isKey(const char* key);
 	EspJsonBasic* getValue();
+	virtual const char* className();
 };
 
 #endif // ! JSON_PAIR_H

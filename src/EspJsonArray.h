@@ -13,6 +13,8 @@ public:
 	~EspJsonArray();
 	void addItem(EspJsonBasic* item);
 	EspJsonBasic* getItem(int index);
+	virtual const char* className();
+	int getCount();
 };
 
 #endif // ! JSON_ARRAY_H

@@ -1,4 +1,5 @@
 #include "EspJsonBasic.h"
+#include "string.h"
 
 EspJsonBasic::EspJsonBasic() {
 	_child = nullptr;
@@ -24,6 +25,16 @@ EspJsonBasic* EspJsonBasic::getParent() {
 void EspJsonBasic::setParent(EspJsonBasic* parent) {
 	_parent = parent;
 }
+
+bool EspJsonBasic::isClass(const char* name) {
+	return (strcmp(name, this->className()) == 0);
+}
+
+
+const char* EspJsonBasic::className() {
+	return "EspJsonBasic";
+}
+
 
 EspJsonBasic::~EspJsonBasic() {
 	if ((_autoFree) && (_child != nullptr))
